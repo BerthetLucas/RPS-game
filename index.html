@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <section class="welcome-modale">
+  </head>
+  <body>
+    <!--Welcome screen-->
 
+    <section class="welcome-modale h-screen">
+      <h1 class="text-lg">Welcome players !</h1>
+      <p>This game needs two players, you'll have to choose an attack first</p>
+      <button class="btn-start-game bg-red-500">Start Game !</button>
     </section>
 
-    <section class="j1-modale">
+    <!--Player 1-->
 
+    <section class="j1-modale h-screen bg-purple-300">
+      <button class="j1-rock">Rock</button>
+
+      <button class="j1-paper">Paper</button>
+
+      <button class="j1-scissors">Scissors</button>
+
+      <button class="btn-j1">To the next player</button>
     </section>
 
-    <section class="j2-modale">
-        
+    <!--Player 2-->
+
+    <section class="j2-modale h-screen bg-green-400">
+      <button class="j2-rock">Rock</button>
+
+      <button class="j2-paper">Paper</button>
+
+      <button class="j2-scissors">Scissors</button>
+
+      <button class="btn-j2">Fight !</button>
     </section>
 
-    <section class="game-modale">
-        
-    </section>
+    <!--Game screen-->
 
-    <section class="result-modale">
+    <section class="game-modale h-screen"></section>
 
-    </section>
+    <!--Result screen-->
 
-
-</body>
+    <section class="result-modale h-screen"></section>
+  </body>
 </html>
