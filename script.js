@@ -58,39 +58,34 @@ function toResultScreen() {
 
 // Game algorythm player's one choice
 
+// Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction 
+
+
 let choicePlayerOne = "";
 
-function playerChooseRock() {
+
   playerOneRock.addEventListener("click", function () {
     choicePlayerOne = playerOneRock.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
     return choicePlayerOne;
   });
-}
 
-function playerChoosePaper() {
   playerOnePaper.addEventListener("click", function () {
     choicePlayerOne = playerOnePaper.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
     return choicePlayerOne;
   });
-}
 
-function playerChooseScissors() {
   playerOneScissors.addEventListener("click", function () {
     choicePlayerOne = playerOneScissors.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
     return choicePlayerOne;
   });
-}
 
-playerChoosePaper();
-playerChooseRock();
-playerChooseScissors();
-
+  console.log(choicePlayerOne);
 // Game algorythm player's two choice
 
 let choicePlayerTwo = "";
@@ -130,6 +125,7 @@ playerChooseScissorsTwo();
 // Game code for result
 
 if (choicePlayerOne === choicePlayerTwo) {
+  console.log(choicePlayerOne); 
   const egality = document.createElement("h2");
   egality.innerHTML = "None of you win !";
   resultScreen.appendChild(egality);
@@ -144,3 +140,5 @@ if (choicePlayerOne === choicePlayerTwo) {
   const victory = document.createElement("h2");
   victory.innerHTML = "Player 2 wins";
 }
+
+
