@@ -60,9 +60,10 @@ function toResultScreen() {
 
 // Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction 
 
-const choicePlayerOne =""; 
+let choicePlayerOne =""; 
 
-function playChoice (choicePlayerOne, choicePlayerTwo) {
+
+
   playerOneRock.addEventListener("click", function () {
     choicePlayerOne = playerOneRock.value;
     console.log(choicePlayerOne);
@@ -84,53 +85,44 @@ function playChoice (choicePlayerOne, choicePlayerTwo) {
    
   });
 
-  return choicePlayerOne; 
-  console.log(choicePlayerOne); 
-}
 
-playOneChoice(); 
-console.log(choicePlayerOne);
 
 // Game algorythm player's two choice
 
 let choicePlayerTwo = "";
 
-function playerChooseRockTwo() {
+
   playerTwoRock.addEventListener("click", function () {
     choicePlayerTwo = playerTwoRock.value;
     console.log(choicePlayerTwo);
-
     toFightScreen();
-    return choicePlayerTwo;
+    result(); 
+    
   });
-}
 
-function playerChoosePaperTwo() {
+
   playerTwoPaper.addEventListener("click", function () {
     choicePlayerTwo = playerTwoPaper.value;
     console.log(choicePlayerTwo);
     toFightScreen();
-    return choicePlayerTwo;
+    result(); 
   });
-}
 
-function playerChooseScissorsTwo() {
   playerTwoScissors.addEventListener("click", function () {
     choicePlayerTwo = playerTwoScissors.value;
     console.log(choicePlayerTwo);
     toFightScreen();
-    return choicePlayerTwo;
+    result(); 
   });
-}
 
-playerChoosePaperTwo();
-playerChooseRockTwo();
-playerChooseScissorsTwo();
 
 // Game code for result
 
+
+function result () {
+
 if (choicePlayerOne === choicePlayerTwo) {
-  console.log(choicePlayerOne); 
+
   const egality = document.createElement("h2");
   egality.innerHTML = "None of you win !";
   resultScreen.appendChild(egality);
@@ -141,9 +133,11 @@ if (choicePlayerOne === choicePlayerTwo) {
 ) {
   const victory = document.createElement("h2");
   victory.innerHTML = "Player 1 wins";
+  resultScreen.appendChild(victory);
 } else {
   const victory = document.createElement("h2");
   victory.innerHTML = "Player 2 wins";
+  resultScreen.appendChild(victory);
 }
 
-
+}
