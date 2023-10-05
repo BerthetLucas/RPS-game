@@ -66,36 +66,36 @@ playerOneRock.addEventListener("click", function () {
   choicePlayerOne = playerOneRock.value;
 
   console.log(choicePlayerOne);
-  playerOnePaper.style.display = "none"; 
-  playerOneScissors.style.display = "none";  
-  playerOneRock.style.width ="25em"; 
+  playerOnePaper.style.display = "none";
+  playerOneScissors.style.display = "none";
+  playerOneRock.style.width = "25em";
   playerOneRock.style.animation = "backOutRight";
-  playerOneRock.style.animationDuration = "4s"; 
-  playerOneRock.style.width =""; 
+  playerOneRock.style.animationDuration = "4s";
+  playerOneRock.style.width = "";
   // toPlayerTwoScreen();
 });
 
 playerOnePaper.addEventListener("click", function () {
   choicePlayerOne = playerOnePaper.value;
   console.log(choicePlayerOne);
-  playerOneScissors.style.display = "none"; 
-  playerOneRock.style.display = "none";   
-  playerOnePaper.style.width ="25em"; 
+  playerOneScissors.style.display = "none";
+  playerOneRock.style.display = "none";
+  playerOnePaper.style.width = "25em";
   playerOnePaper.style.animation = "fadeOutUp";
-  playerOnePaper.style.animationDuration = "4s"; 
-  playerOnePaper.style.width =""; 
+  playerOnePaper.style.animationDuration = "4s";
+  playerOnePaper.style.width = "";
   // toPlayerTwoScreen();
 });
 
 playerOneScissors.addEventListener("click", function () {
   choicePlayerOne = playerOneScissors.value;
   console.log(choicePlayerOne);
-  playerOnePaper.style.display = "none"; 
-  playerOneRock.style.display = "none";  
-  playerOneScissors.style.width ="25em"; 
+  playerOnePaper.style.display = "none";
+  playerOneRock.style.display = "none";
+  playerOneScissors.style.width = "25em";
   playerOneScissors.style.animation = "rotateOutUpLeft";
-  playerOneScissors.style.animationDuration = "4s"; 
-  playerOneScissors.style.width =""; 
+  playerOneScissors.style.animationDuration = "4s";
+  playerOneScissors.style.width = "";
   // toPlayerTwoScreen();
 });
 
@@ -106,8 +106,12 @@ let choicePlayerTwo = "";
 playerTwoRock.addEventListener("click", function () {
   choicePlayerTwo = playerTwoRock.value;
   console.log(choicePlayerTwo);
-  playerTwoPaper.style.display = "none"; 
+  playerTwoPaper.style.display = "none";
   playerTwoScissors.style.display = "none";
+  playerTwoRock.style.width = "25em";
+  playerTwoRock.style.animation = "backOutRight";
+  playerTwoRock.style.animationDuration = "4s";
+  playerTwoRock.style.width = "";
   // toFightScreen();
   result();
 });
@@ -115,8 +119,12 @@ playerTwoRock.addEventListener("click", function () {
 playerTwoPaper.addEventListener("click", function () {
   choicePlayerTwo = playerTwoPaper.value;
   console.log(choicePlayerTwo);
-  playerTwoRock.style.display = "none"; 
+  playerTwoRock.style.display = "none";
   playerTwoScissors.style.display = "none";
+  playerTwoPaper.style.width = "25em";
+  playerTwoPaper.style.animation = "fadeOutUp";
+  playerTwoPaper.style.animationDuration = "4s";
+  playerTwoPaper.style.width = "";
 
   // toFightScreen();
   result();
@@ -125,8 +133,12 @@ playerTwoPaper.addEventListener("click", function () {
 playerTwoScissors.addEventListener("click", function () {
   choicePlayerTwo = playerTwoScissors.value;
   console.log(choicePlayerTwo);
-  playerTwoRock.style.display = "none"; 
+  playerTwoRock.style.display = "none";
   playerTwoPaper.style.display = "none";
+  playerTwoScissors.style.width = "25em";
+  playerTwoScissors.style.animation = "rotateOutUpLeft";
+  playerTwoScissors.style.animationDuration = "4s";
+  playerTwoScissors.style.width = "";
   // toFightScreen();
   result();
 });
@@ -134,7 +146,11 @@ playerTwoScissors.addEventListener("click", function () {
 // Game code for result
 
 function result() {
-  if (choicePlayerOne === choicePlayerTwo) {
+  if (
+    (choicePlayerOne === choicePlayerTwo) ||
+    (choicePlayerOne == "") ||
+    (choicePlayerTwo == "")
+  ) {
     const egality = document.createElement("h2");
     egality.innerHTML = "None of you win !";
     resultScreen.appendChild(egality);
