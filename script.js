@@ -60,32 +60,36 @@ function toResultScreen() {
 
 // Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction 
 
+const choicePlayerOne =""; 
 
-let choicePlayerOne = "";
-
-
+function playOneChoice (choicePlayerOne) {
   playerOneRock.addEventListener("click", function () {
     choicePlayerOne = playerOneRock.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
-    return choicePlayerOne;
+
   });
 
   playerOnePaper.addEventListener("click", function () {
     choicePlayerOne = playerOnePaper.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
-    return choicePlayerOne;
+   
   });
 
   playerOneScissors.addEventListener("click", function () {
     choicePlayerOne = playerOneScissors.value;
     console.log(choicePlayerOne);
     toPlayerTwoScreen();
-    return choicePlayerOne;
+   
   });
 
-  console.log(choicePlayerOne);
+  return choicePlayerOne; 
+}
+
+playOneChoice(); 
+console.log(choicePlayerOne);
+
 // Game algorythm player's two choice
 
 let choicePlayerTwo = "";
