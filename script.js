@@ -62,7 +62,7 @@ function toResultScreen() {
 
 const choicePlayerOne =""; 
 
-function playOneChoice (choicePlayerOne) {
+function playChoice (choicePlayerOne, choicePlayerTwo) {
   playerOneRock.addEventListener("click", function () {
     choicePlayerOne = playerOneRock.value;
     console.log(choicePlayerOne);
@@ -85,6 +85,7 @@ function playOneChoice (choicePlayerOne) {
   });
 
   return choicePlayerOne; 
+  console.log(choicePlayerOne); 
 }
 
 playOneChoice(); 
