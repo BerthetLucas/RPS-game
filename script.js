@@ -58,86 +58,71 @@ function toResultScreen() {
 
 // Game algorythm player's one choice
 
-// Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction 
+// Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction
 
-let choicePlayerOne =""; 
+let choicePlayerOne = "";
 
+playerOneRock.addEventListener("click", function () {
+  choicePlayerOne = playerOneRock.value;
+  console.log(choicePlayerOne);
+  toPlayerTwoScreen();
+});
 
+playerOnePaper.addEventListener("click", function () {
+  choicePlayerOne = playerOnePaper.value;
+  console.log(choicePlayerOne);
+  toPlayerTwoScreen();
+});
 
-  playerOneRock.addEventListener("click", function () {
-    choicePlayerOne = playerOneRock.value;
-    console.log(choicePlayerOne);
-    toPlayerTwoScreen();
-
-  });
-
-  playerOnePaper.addEventListener("click", function () {
-    choicePlayerOne = playerOnePaper.value;
-    console.log(choicePlayerOne);
-    toPlayerTwoScreen();
-   
-  });
-
-  playerOneScissors.addEventListener("click", function () {
-    choicePlayerOne = playerOneScissors.value;
-    console.log(choicePlayerOne);
-    toPlayerTwoScreen();
-   
-  });
-
-
+playerOneScissors.addEventListener("click", function () {
+  choicePlayerOne = playerOneScissors.value;
+  console.log(choicePlayerOne);
+  toPlayerTwoScreen();
+});
 
 // Game algorythm player's two choice
 
 let choicePlayerTwo = "";
 
+playerTwoRock.addEventListener("click", function () {
+  choicePlayerTwo = playerTwoRock.value;
+  console.log(choicePlayerTwo);
+  toFightScreen();
+  result();
+});
 
-  playerTwoRock.addEventListener("click", function () {
-    choicePlayerTwo = playerTwoRock.value;
-    console.log(choicePlayerTwo);
-    toFightScreen();
-    result(); 
-    
-  });
+playerTwoPaper.addEventListener("click", function () {
+  choicePlayerTwo = playerTwoPaper.value;
+  console.log(choicePlayerTwo);
+  toFightScreen();
+  result();
+});
 
-
-  playerTwoPaper.addEventListener("click", function () {
-    choicePlayerTwo = playerTwoPaper.value;
-    console.log(choicePlayerTwo);
-    toFightScreen();
-    result(); 
-  });
-
-  playerTwoScissors.addEventListener("click", function () {
-    choicePlayerTwo = playerTwoScissors.value;
-    console.log(choicePlayerTwo);
-    toFightScreen();
-    result(); 
-  });
-
+playerTwoScissors.addEventListener("click", function () {
+  choicePlayerTwo = playerTwoScissors.value;
+  console.log(choicePlayerTwo);
+  toFightScreen();
+  result();
+});
 
 // Game code for result
 
-
-function result () {
-
-if (choicePlayerOne === choicePlayerTwo) {
-
-  const egality = document.createElement("h2");
-  egality.innerHTML = "None of you win !";
-  resultScreen.appendChild(egality);
-} else if (
-  (choicePlayerOne === "rock" && choicePlayerTwo == "scissors") ||
-  (choicePlayerOne === "paper" && choicePlayerTwo == "rock") ||
-  (choicePlayerOne === "scissors" && choicePlayerTwo == "paper")
-) {
-  const victory = document.createElement("h2");
-  victory.innerHTML = "Player 1 wins";
-  resultScreen.appendChild(victory);
-} else {
-  const victory = document.createElement("h2");
-  victory.innerHTML = "Player 2 wins";
-  resultScreen.appendChild(victory);
-}
-
+function result() {
+  if (choicePlayerOne === choicePlayerTwo) {
+    const egality = document.createElement("h2");
+    egality.innerHTML = "None of you win !";
+    resultScreen.appendChild(egality);
+  } else if (
+    (choicePlayerOne === "rock" && choicePlayerTwo == "scissors") ||
+    (choicePlayerOne === "paper" && choicePlayerTwo == "rock") ||
+    (choicePlayerOne === "scissors" && choicePlayerTwo == "paper")
+  ) {
+    const victory = document.createElement("h2");
+    victory.innerHTML = "Player 1 wins";
+    resultScreen.appendChild(victory);
+  } else {
+    const victory = document.createElement("h2");
+    victory.innerHTML = "Player 2 wins";
+    resultScreen.appendChild(victory);
+  }
 }
