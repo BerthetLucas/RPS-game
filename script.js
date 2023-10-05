@@ -26,7 +26,7 @@ btnStartGame.addEventListener("click", toPlayerOneScreen);
 
 function toPlayerOneScreen() {
   welcomeScreen.style.display = "none";
-  playOne.style.display = "block";
+  playOne.style.display = "flex";
 }
 
 // Player one screen to player 2
@@ -35,7 +35,7 @@ btnPlayerOne.addEventListener("click", toPlayerTwoScreen);
 
 function toPlayerTwoScreen() {
   playOne.style.display = "none";
-  playTwo.style.display = "block";
+  playTwo.style.display = "flex";
 }
 
 // Player two screen to game screen
@@ -44,7 +44,7 @@ btnPlayerTwo.addEventListener("click", toFightScreen);
 
 function toFightScreen() {
   playTwo.style.display = "none";
-  gameScreen.style.display = "block";
+  gameScreen.style.display = "flex";
 }
 
 // Game screen to result screen
@@ -53,7 +53,7 @@ btnToResult.addEventListener("click", toResultScreen);
 
 function toResultScreen() {
   gameScreen.style.display = "none";
-  resultScreen.style.display = "block";
+  resultScreen.style.display = "flex";
 }
 
 // Game algorythm player's one choice
@@ -64,20 +64,39 @@ let choicePlayerOne = "";
 
 playerOneRock.addEventListener("click", function () {
   choicePlayerOne = playerOneRock.value;
+
   console.log(choicePlayerOne);
-  toPlayerTwoScreen();
+  playerOnePaper.style.display = "none"; 
+  playerOneScissors.style.display = "none";  
+  playerOneRock.style.width ="25em"; 
+  playerOneRock.style.animation = "backOutRight";
+  playerOneRock.style.animationDuration = "4s"; 
+  playerOneRock.style.width =""; 
+  // toPlayerTwoScreen();
 });
 
 playerOnePaper.addEventListener("click", function () {
   choicePlayerOne = playerOnePaper.value;
   console.log(choicePlayerOne);
-  toPlayerTwoScreen();
+  playerOneScissors.style.display = "none"; 
+  playerOneRock.style.display = "none";   
+  playerOnePaper.style.width ="25em"; 
+  playerOnePaper.style.animation = "fadeOutUp";
+  playerOnePaper.style.animationDuration = "4s"; 
+  playerOnePaper.style.width =""; 
+  // toPlayerTwoScreen();
 });
 
 playerOneScissors.addEventListener("click", function () {
   choicePlayerOne = playerOneScissors.value;
   console.log(choicePlayerOne);
-  toPlayerTwoScreen();
+  playerOnePaper.style.display = "none"; 
+  playerOneRock.style.display = "none";  
+  playerOneScissors.style.width ="25em"; 
+  playerOneScissors.style.animation = "rotateOutUpLeft";
+  playerOneScissors.style.animationDuration = "4s"; 
+  playerOneScissors.style.width =""; 
+  // toPlayerTwoScreen();
 });
 
 // Game algorythm player's two choice
@@ -87,21 +106,28 @@ let choicePlayerTwo = "";
 playerTwoRock.addEventListener("click", function () {
   choicePlayerTwo = playerTwoRock.value;
   console.log(choicePlayerTwo);
-  toFightScreen();
+  playerTwoPaper.style.display = "none"; 
+  playerTwoScissors.style.display = "none";
+  // toFightScreen();
   result();
 });
 
 playerTwoPaper.addEventListener("click", function () {
   choicePlayerTwo = playerTwoPaper.value;
   console.log(choicePlayerTwo);
-  toFightScreen();
+  playerTwoRock.style.display = "none"; 
+  playerTwoScissors.style.display = "none";
+
+  // toFightScreen();
   result();
 });
 
 playerTwoScissors.addEventListener("click", function () {
   choicePlayerTwo = playerTwoScissors.value;
   console.log(choicePlayerTwo);
-  toFightScreen();
+  playerTwoRock.style.display = "none"; 
+  playerTwoPaper.style.display = "none";
+  // toFightScreen();
   result();
 });
 

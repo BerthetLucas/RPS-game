@@ -1,10 +1,9 @@
-
 :root {
-  --green : #06D6A0; 
-  --red : #EF476F; 
-  --yellow : #FFD166; 
-  --blue : #118AB2; 
-  --navy : #073B4C; 
+  --green: #06d6a0;
+  --red: #ef476f;
+  --yellow: #ffd166;
+  --blue: #118ab2;
+  --navy: #073b4c;
 }
 
 .j1-modale {
@@ -24,10 +23,70 @@
 }
 
 .btn-start-game {
-  border : none; 
-  padding : 2em; 
-  border-radius: 15px; 
+  border: none;
+  padding: 2em;
+  border-radius: 15px;
   font-weight: bold;
-  color : white; 
+  color: white;
   background-color: var(--green);
+  box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-start-game:hover {
+  animation: rubberBand;
+  animation-duration: 1s; 
+}
+
+.j1-rock {
+  width: 15em;
+}
+
+.j1-rock:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
+}
+
+.j1-paper {
+  width: 15em;
+}
+
+.j1-paper:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
+}
+
+.j1-scissors {
+  width: 15em;
+}
+
+.j1-scissors:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
+}
+
+.j2-rock {
+  width: 15em;
+}
+
+.j2-rock:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
+}
+
+.j2-paper {
+  width: 15em;
+}
+
+.j2-paper:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
+}
+
+.j2-scissors {
+  width: 15em;
+}
+
+.j2-scissors:hover {
+  animation : shakeY; 
+  animation-duration: 2s;
 }
