@@ -8,18 +8,22 @@
 
 .j1-modale {
   display: none;
+  background-color: var(--green);
 }
 
 .j2-modale {
   display: none;
+  background-color: var(--red);
 }
 
 .game-modale {
   display: none;
+  background-color: var(--navy);
 }
 
 .result-modale {
   display: none;
+  background-color: var(--blue);
 }
 
 .btn-start-game {
@@ -43,7 +47,7 @@
   border-radius: 15px;
   font-weight: bold;
   color: white;
-  background-color: var(--blue);
+  background-color: var(--yellow);
   box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -58,7 +62,7 @@
   border-radius: 15px;
   font-weight: bold;
   color: white;
-  background-color: var(--yellow);
+  background-color: var(--blue);
   box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -66,6 +70,22 @@
   animation: rubberBand;
   animation-duration: 1s; 
 }
+
+.btn-result{
+  border: none;
+  padding: 2em;
+  border-radius: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--red);
+  box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-result:hover {
+  animation: rubberBand;
+  animation-duration: 1s; 
+}
+
 
 .j1-rock {
   width: 15em;
@@ -119,4 +139,12 @@
 .j2-scissors:hover {
   animation : shakeY; 
   animation-duration: 2s;
+}
+
+.j1-choice-container{
+  width : 20em; 
+}
+
+.j2-choice-container{
+  width : 20em; 
 }

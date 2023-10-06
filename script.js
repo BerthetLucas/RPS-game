@@ -16,9 +16,12 @@ const playerOneRock = document.querySelector(".j1-rock");
 const playerOnePaper = document.querySelector(".j1-paper");
 const playerOneScissors = document.querySelector(".j1-scissors");
 
-const playerTwoRock = document.querySelector(".j2-rock");
+const playerTwoRock = document.querySelector(".j2-rock"); 
 const playerTwoPaper = document.querySelector(".j2-paper");
 const playerTwoScissors = document.querySelector(".j2-scissors");
+
+const playerOneResultContainer = document.querySelector('.j1-choice-container'); 
+const playerTwoResultContainer = document.querySelector('.j2-choice-container');
 
 // Welcome screen
 
@@ -72,6 +75,7 @@ playerOneRock.addEventListener("click", function () {
   playerOneRock.style.animation = "backOutRight";
   playerOneRock.style.animationDuration = "4s";
   playerOneRock.style.width = "";
+  playerOneResultContainer.innerHTML = `<img src="./img/Pierre.png">`; 
   // toPlayerTwoScreen();
 });
 
@@ -84,6 +88,7 @@ playerOnePaper.addEventListener("click", function () {
   playerOnePaper.style.animation = "fadeOutUp";
   playerOnePaper.style.animationDuration = "4s";
   playerOnePaper.style.width = "";
+  playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`
   // toPlayerTwoScreen();
 });
 
@@ -96,6 +101,7 @@ playerOneScissors.addEventListener("click", function () {
   playerOneScissors.style.animation = "rotateOutUpLeft";
   playerOneScissors.style.animationDuration = "4s";
   playerOneScissors.style.width = "";
+  playerOneResultContainer.innerHTML = `<img src="./img/Ciseaux.png">`
   // toPlayerTwoScreen();
 });
 
@@ -112,6 +118,10 @@ playerTwoRock.addEventListener("click", function () {
   playerTwoRock.style.animation = "backOutRight";
   playerTwoRock.style.animationDuration = "4s";
   playerTwoRock.style.width = "";
+  playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`
+  playerTwoResultContainer.style.animation ="bouceInRight"; 
+  playerTwoResultContainer.style.animationDuration = "2s";
+
   // toFightScreen();
   result();
 });
@@ -125,6 +135,7 @@ playerTwoPaper.addEventListener("click", function () {
   playerTwoPaper.style.animation = "fadeOutUp";
   playerTwoPaper.style.animationDuration = "4s";
   playerTwoPaper.style.width = "";
+  playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`
 
   // toFightScreen();
   result();
@@ -139,6 +150,7 @@ playerTwoScissors.addEventListener("click", function () {
   playerTwoScissors.style.animation = "rotateOutUpLeft";
   playerTwoScissors.style.animationDuration = "4s";
   playerTwoScissors.style.width = "";
+  playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`
   // toFightScreen();
   result();
 });

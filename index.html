@@ -25,7 +25,7 @@
 
   <!--Player 1-->
 
-  <section class="j1-modale h-screen bg-purple-300 flex-col items-center justify-center ">
+  <section class="j1-modale h-screen flex-col items-center justify-center ">
     <div class="mb-20">
     <button class="j1-rock" value="rock"><img src="./img/Pierre.png"></button>
 
@@ -40,7 +40,7 @@
 
   <!--Player 2-->
 
-  <section class="j2-modale h-screen bg-green-400 flex-col items-center justify-center">
+  <section class="j2-modale h-screen flex-col items-center justify-center">
     <div class="mb-20">
     <button class="j2-rock" value="rock"><img src="./img/Pierre.png"</button>
 
@@ -55,13 +55,19 @@
 
   <!--Game screen-->
 
-  <section class="game-modale h-screen bg-blue-300 items-center justify-center">
+  <section class="game-modale h-screen flex-col items-center justify-center">
+    <div class="flex flex-row gap-10 mb-20">
+    <div class="j1-choice-container"></div>
+    <div class="j2-choice-container"></div>
+  </div>
     <button class="btn-result">Go to result</button>
+
+    
   </section>
 
   <!--Result screen-->
 
-  <section class="result-modale h-screen bg-pink-400 items-center justify-center"></section>
+  <section class="result-modale h-screen items-center justify-center"></section>
 </body>
 
 </html>
