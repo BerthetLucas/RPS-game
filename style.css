@@ -143,8 +143,25 @@
 
 .j1-choice-container{
   width : 20em; 
+  z-index: 2;
 }
 
 .j2-choice-container{
   width : 20em; 
+  z-index: 2;
+}
+
+.explosion{
+  position: absolute;
+}
+
+.explosion-img {
+  position: relative;
+  top : 50%; 
+  left : 50%; 
+  height : 20em; 
+  animation: pulse;
+  animation-duration: 3s;
+
+
 }

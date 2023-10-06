@@ -48,6 +48,10 @@ btnPlayerTwo.addEventListener("click", toFightScreen);
 function toFightScreen() {
   playTwo.style.display = "none";
   gameScreen.style.display = "flex";
+  playerOneResultContainer.style.animation="bounceInLeft"; 
+  playerOneResultContainer.style.animationDuration="2s";
+  playerTwoResultContainer.style.animation="bounceInRight"; 
+  playerTwoResultContainer.style.animationDuration="2s"; 
 }
 
 // Game screen to result screen
@@ -119,8 +123,7 @@ playerTwoRock.addEventListener("click", function () {
   playerTwoRock.style.animationDuration = "4s";
   playerTwoRock.style.width = "";
   playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`
-  playerTwoResultContainer.style.animation ="bouceInRight"; 
-  playerTwoResultContainer.style.animationDuration = "2s";
+ 
 
   // toFightScreen();
   result();
