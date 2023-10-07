@@ -1,5 +1,8 @@
 // DOM elements
 
+let choicePlayerOne = "";
+let choicePlayerTwo = "";
+
 const welcomeScreen = document.querySelector(".welcome-modale");
 const btnStartGame = document.querySelector(".btn-start-game");
 const playOne = document.querySelector(".j1-modale");
@@ -10,10 +13,11 @@ const btnPlayerTwo = document.querySelector(".btn-j2");
 const gameScreen = document.querySelector(".game-modale");
 const resultScreen = document.querySelector(".result-modale");
 const btnToResult = document.querySelector(".btn-result");
+const btnToNextMatch = document.querySelector('.btn-next-match'); 
 
 const resultimg = document.querySelector(".img-result");
 
-// Players choices DOM element
+// Players choices DOM elements
 const playerOneRock = document.querySelector(".j1-rock");
 const playerOnePaper = document.querySelector(".j1-paper");
 const playerOneScissors = document.querySelector(".j1-scissors");
@@ -71,11 +75,22 @@ function toResultScreen() {
   resultScreen.style.display = "flex";
 }
 
+// Command to next match 
+
+btnToNextMatch.addEventListener('click', toNextMatch); 
+
+function toNextMatch() {
+  choicePlayerOne = "";
+  choicePlayerTwo = "";
+  resultScreen.style.display = "none";
+  welcomeScreen.style.display = "flex";
+  playerOnePaper.removeEventListener("click", pOneSetPaper); 
+
+  // Réinitialiser les éléments DOM des joueurs
+
+}
+
 // Game algorythm player's one choice
-
-// Piste de débug Utiliser une fonction générale sur le choix du joueur, cette fonction doit retourner une promesse afin de pouvoir exploiter la valeur du choix en dehors de la fonction
-
-let choicePlayerOne = "";
 
 playerOneRock.addEventListener("click", function () {
   choicePlayerOne = playerOneRock.value;
@@ -89,7 +104,10 @@ playerOneRock.addEventListener("click", function () {
   // toPlayerTwoScreen();
 });
 
-playerOnePaper.addEventListener("click", function () {
+playerOnePaper.addEventListener("click", pOneSetPaper)
+
+
+function pOneSetPaper () {
   choicePlayerOne = playerOnePaper.value;
   console.log(choicePlayerOne);
   playerOneScissors.style.display = "none";
@@ -98,7 +116,7 @@ playerOnePaper.addEventListener("click", function () {
   playerOnePaper.classList.add("paper-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`;
   // toPlayerTwoScreen();
-});
+};
 
 playerOneScissors.addEventListener("click", function () {
   choicePlayerOne = playerOneScissors.value;
@@ -112,8 +130,6 @@ playerOneScissors.addEventListener("click", function () {
 });
 
 // Game algorythm player's two choice
-
-let choicePlayerTwo = "";
 
 playerTwoRock.addEventListener("click", function () {
   choicePlayerTwo = playerTwoRock.value;

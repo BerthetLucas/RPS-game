@@ -1,3 +1,5 @@
+/* Colors setting */
+
 :root {
   --green: #06d6a0;
   --red: #ef476f;
@@ -5,6 +7,8 @@
   --blue: #118ab2;
   --navy: #073b4c;
 }
+
+/* Game screens */
 
 .j1-modale {
   display: none;
@@ -25,6 +29,8 @@
   display: none;
   background-color: var(--blue);
 }
+
+/* Button style  */
 
 .btn-start-game {
   border: none;
@@ -90,6 +96,17 @@
   --animate-repeat : 1; 
 }
 
+.btn-next-match{
+  border: none;
+  padding: 2em;
+  border-radius: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--red);
+  box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Assets for players choices */
 
 .j1-rock {
   width: 15em;
@@ -149,19 +166,18 @@
   --animate-repeat : 1; 
 }
 
+
+/* Containers for assets in the fight screen  */
+
 .j1-choice-container{
   width : 20em; 
-  z-index: 2;
 }
 
 .j2-choice-container{
   width : 20em; 
-  z-index: 2;
 }
 
-
 .explosion-img {
- 
   height : 20em; 
   animation: pulse;
   animation-duration: 3s;
@@ -185,6 +201,9 @@
   animation-duration : 3s; 
   width : 15em; 
 }
+
+
+/* Style for the result screen  */
 
 .score-message{
   font-size : 3em; 
