@@ -11,6 +11,8 @@ const gameScreen = document.querySelector(".game-modale");
 const resultScreen = document.querySelector(".result-modale");
 const btnToResult = document.querySelector(".btn-result");
 
+const resultimg = document.querySelector(".img-result");
+
 // Players choices DOM element
 const playerOneRock = document.querySelector(".j1-rock");
 const playerOnePaper = document.querySelector(".j1-paper");
@@ -118,6 +120,7 @@ playerTwoRock.addEventListener("click", function () {
 
   // toFightScreen();
   result();
+  imgend();
 });
 
 playerTwoPaper.addEventListener("click", function () {
@@ -131,6 +134,7 @@ playerTwoPaper.addEventListener("click", function () {
 
   // toFightScreen();
   result();
+  imgend();
 });
 
 playerTwoScissors.addEventListener("click", function () {
@@ -143,6 +147,7 @@ playerTwoScissors.addEventListener("click", function () {
   playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`;
   // toFightScreen();
   result();
+  imgend();
 });
 
 // Game code for result
@@ -155,8 +160,8 @@ function result() {
   ) {
     const egality = document.createElement("h2");
     egality.innerHTML = "None of you win !";
-    egality.classList.add("score-message")
-    resultScreen.appendChild(egality);
+    egality.classList.add("score-message");
+    resultScreen.insertBefore(egality, resultimg);
   } else if (
     (choicePlayerOne === "rock" && choicePlayerTwo == "scissors") ||
     (choicePlayerOne === "paper" && choicePlayerTwo == "rock") ||
@@ -164,12 +169,33 @@ function result() {
   ) {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 1 wins";
-    victory.classList.add("score-message")
-    resultScreen.appendChild(victory);
+    victory.classList.add("score-message");
+    resultScreen.insertBefore(victory, resultimg);
   } else {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 2 wins";
-    victory.classList.add("score-message")
-    resultScreen.appendChild(victory);
+    victory.classList.add("score-message");
+    resultScreen.insertBefore(victory, resultimg);
+  }
+}
+
+// Code for img result asset
+function imgend() {
+  if (
+    (choicePlayerOne == "rock" && choicePlayerTwo == "paper") ||
+    (choicePlayerTwo == "rock" && choicePlayerOne == "paper")
+  ) {
+    resultimg.setAttribute("src", "./img/imgFight/PierreEnd2.png");
+  } else if (
+    (choicePlayerOne == "rock" && choicePlayerTwo == "scissors") ||
+    (choicePlayerTwo == "rock" && choicePlayerOne == "scissors")
+  ) {
+    resultimg.setAttribute("src", "./img/imgFight/CiseauxEnd.png");
+  } else if (
+    (choicePlayerOne == "paper" && choicePlayerTwo == "scissors") ||
+    (choicePlayerTwo == "paper" && choicePlayerOne == "scissors")
+  ) {
+    resultimg.setAttribute("src", "./img/imgFight/FeuilleEnd.png");
+  } else {
   }
 }
