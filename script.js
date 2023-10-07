@@ -76,9 +76,7 @@ playerOneRock.addEventListener("click", function () {
   playerOnePaper.style.display = "none";
   playerOneScissors.style.display = "none";
   playerOneRock.style.width = "25em";
-  playerOneRock.style.animation = "backOutRight";
-  playerOneRock.style.animationDuration = "4s";
-  playerOneRock.style.width = "";
+  playerOneRock.classList.add("rock-fight-animation"); 
   playerOneResultContainer.innerHTML = `<img src="./img/Pierre.png">`; 
   // toPlayerTwoScreen();
 });
@@ -89,9 +87,7 @@ playerOnePaper.addEventListener("click", function () {
   playerOneScissors.style.display = "none";
   playerOneRock.style.display = "none";
   playerOnePaper.style.width = "25em";
-  playerOnePaper.style.animation = "fadeOutUp";
-  playerOnePaper.style.animationDuration = "4s";
-  playerOnePaper.style.width = "";
+  playerOnePaper.classList.add("paper-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`
   // toPlayerTwoScreen();
 });
@@ -102,9 +98,7 @@ playerOneScissors.addEventListener("click", function () {
   playerOnePaper.style.display = "none";
   playerOneRock.style.display = "none";
   playerOneScissors.style.width = "25em";
-  playerOneScissors.style.animation = "rotateOutUpLeft";
-  playerOneScissors.style.animationDuration = "4s";
-  playerOneScissors.style.width = "";
+  playerOneScissors.classList.add('scissors-fight-animation');
   playerOneResultContainer.innerHTML = `<img src="./img/Ciseaux.png">`
   // toPlayerTwoScreen();
 });
@@ -119,9 +113,7 @@ playerTwoRock.addEventListener("click", function () {
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.display = "none";
   playerTwoRock.style.width = "25em";
-  playerTwoRock.style.animation = "backOutRight";
-  playerTwoRock.style.animationDuration = "4s";
-  playerTwoRock.style.width = "";
+  playerTwoRock.classList.add("rock-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`
  
 
@@ -135,9 +127,7 @@ playerTwoPaper.addEventListener("click", function () {
   playerTwoRock.style.display = "none";
   playerTwoScissors.style.display = "none";
   playerTwoPaper.style.width = "25em";
-  playerTwoPaper.style.animation = "fadeOutUp";
-  playerTwoPaper.style.animationDuration = "4s";
-  playerTwoPaper.style.width = "";
+  playerTwoPaper.classList.add("paper-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`
 
   // toFightScreen();
@@ -150,9 +140,7 @@ playerTwoScissors.addEventListener("click", function () {
   playerTwoRock.style.display = "none";
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.width = "25em";
-  playerTwoScissors.style.animation = "rotateOutUpLeft";
-  playerTwoScissors.style.animationDuration = "4s";
-  playerTwoScissors.style.width = "";
+  playerTwoScissors.classList.add('scissors-fight-animation');
   playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`
   // toFightScreen();
   result();

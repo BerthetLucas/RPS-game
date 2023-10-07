@@ -163,5 +163,22 @@
   animation: pulse;
   animation-duration: 3s;
 
+}
 
+.rock-fight-animation {
+  animation : backOutRight; 
+  animation-duration : 4s; 
+  width : 15em; 
+}
+
+.paper-fight-animation {
+  animation : fadeOutUp; 
+  animation-duration : 4s; 
+  width : 15em; 
+}
+
+.scissors-fight-animation {
+  animation : rotateOutUpLeft; 
+  animation-duration : 4s; 
+  width : 15em; 
 }
