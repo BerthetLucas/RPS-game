@@ -25,6 +25,12 @@ const playerTwoScissors = document.querySelector(".j2-scissors");
 const playerOneResultContainer = document.querySelector(".j1-choice-container");
 const playerTwoResultContainer = document.querySelector(".j2-choice-container");
 
+const scorePlayerOneText = document.querySelector(".player-one-score");
+const scorePlayerTwoText = document.querySelector(".player-two-score");
+
+let scorePlayerOne = 0;
+let scorePlayerTwo = 0;
+
 // Welcome screen
 
 btnStartGame.addEventListener("click", toPlayerOneScreen);
@@ -171,11 +177,17 @@ function result() {
     victory.innerHTML = "Player 1 wins";
     victory.classList.add("score-message");
     resultScreen.insertBefore(victory, resultimg);
+    scorePlayerOne++
+    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`
+    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`
   } else {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 2 wins";
     victory.classList.add("score-message");
     resultScreen.insertBefore(victory, resultimg);
+    scorePlayerTwo++
+    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`
+    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`
   }
 }
 
