@@ -39,6 +39,7 @@
 .btn-start-game:hover {
   animation: rubberBand;
   animation-duration: 1s; 
+  --animate-repeat : 1; 
 }
 
 .btn-j1{
@@ -54,6 +55,7 @@
 .btn-j1:hover {
   animation: rubberBand;
   animation-duration: 1s; 
+  --animate-repeat : 1; 
 }
 
 .btn-j2{
@@ -69,6 +71,7 @@
 .btn-j2:hover {
   animation: rubberBand;
   animation-duration: 1s; 
+  --animate-repeat : 1; 
 }
 
 .btn-result{
@@ -84,6 +87,7 @@
 .btn-result:hover {
   animation: rubberBand;
   animation-duration: 1s; 
+  --animate-repeat : 1; 
 }
 
 
@@ -94,6 +98,7 @@
 .j1-rock:hover {
   animation : shakeY; 
   animation-duration: 2s;
+  --animate-repeat : 1; 
 }
 
 .j1-paper {
@@ -103,6 +108,7 @@
 .j1-paper:hover {
   animation : shakeY; 
   animation-duration: 2s;
+  --animate-repeat : 1; 
 }
 
 .j1-scissors {
@@ -121,6 +127,7 @@
 .j2-rock:hover {
   animation : shakeY; 
   animation-duration: 2s;
+  --animate-repeat : 1; 
 }
 
 .j2-paper {
@@ -139,6 +146,7 @@
 .j2-scissors:hover {
   animation : shakeY; 
   animation-duration: 2s;
+  --animate-repeat : 1; 
 }
 
 .j1-choice-container{
@@ -186,4 +194,20 @@
 
 .img-result{
   width: 40%; 
+  animation : fadeIn; 
+  animation-duration: 2s;
+}
+
+.player-one-score{
+  font-size : 2em; 
+  font-weight : bold; 
+  color : white
+
+}
+
+.player-two-score{
+  font-size : 2em; 
+  font-weight : bold; 
+  color : white
+
 }
