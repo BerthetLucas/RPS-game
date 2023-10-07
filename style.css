@@ -151,14 +151,9 @@
   z-index: 2;
 }
 
-.explosion{
-  position: absolute;
-}
 
 .explosion-img {
-  position: relative;
-  top : 50%; 
-  left : 50%; 
+ 
   height : 20em; 
   animation: pulse;
   animation-duration: 3s;
@@ -167,18 +162,24 @@
 
 .rock-fight-animation {
   animation : backOutRight; 
-  animation-duration : 4s; 
+  animation-duration : 3s; 
   width : 15em; 
 }
 
 .paper-fight-animation {
   animation : fadeOutUp; 
-  animation-duration : 4s; 
+  animation-duration : 3s; 
   width : 15em; 
 }
 
 .scissors-fight-animation {
   animation : rotateOutUpLeft; 
-  animation-duration : 4s; 
+  animation-duration : 3s; 
   width : 15em; 
+}
+
+.score-message{
+  font-size : 3em; 
+  font-weight : bold; 
+  color : white
 }

@@ -16,12 +16,12 @@ const playerOneRock = document.querySelector(".j1-rock");
 const playerOnePaper = document.querySelector(".j1-paper");
 const playerOneScissors = document.querySelector(".j1-scissors");
 
-const playerTwoRock = document.querySelector(".j2-rock"); 
+const playerTwoRock = document.querySelector(".j2-rock");
 const playerTwoPaper = document.querySelector(".j2-paper");
 const playerTwoScissors = document.querySelector(".j2-scissors");
 
-const playerOneResultContainer = document.querySelector('.j1-choice-container'); 
-const playerTwoResultContainer = document.querySelector('.j2-choice-container');
+const playerOneResultContainer = document.querySelector(".j1-choice-container");
+const playerTwoResultContainer = document.querySelector(".j2-choice-container");
 
 // Welcome screen
 
@@ -48,10 +48,10 @@ btnPlayerTwo.addEventListener("click", toFightScreen);
 function toFightScreen() {
   playTwo.style.display = "none";
   gameScreen.style.display = "flex";
-  playerOneResultContainer.style.animation="bounceInLeft"; 
-  playerOneResultContainer.style.animationDuration="2s";
-  playerTwoResultContainer.style.animation="bounceInRight"; 
-  playerTwoResultContainer.style.animationDuration="2s"; 
+  playerOneResultContainer.style.animation = "bounceInLeft";
+  playerOneResultContainer.style.animationDuration = "2s";
+  playerTwoResultContainer.style.animation = "bounceInRight";
+  playerTwoResultContainer.style.animationDuration = "2s";
 }
 
 // Game screen to result screen
@@ -76,8 +76,8 @@ playerOneRock.addEventListener("click", function () {
   playerOnePaper.style.display = "none";
   playerOneScissors.style.display = "none";
   playerOneRock.style.width = "25em";
-  playerOneRock.classList.add("rock-fight-animation"); 
-  playerOneResultContainer.innerHTML = `<img src="./img/Pierre.png">`; 
+  playerOneRock.classList.add("rock-fight-animation");
+  playerOneResultContainer.innerHTML = `<img src="./img/Pierre.png">`;
   // toPlayerTwoScreen();
 });
 
@@ -88,7 +88,7 @@ playerOnePaper.addEventListener("click", function () {
   playerOneRock.style.display = "none";
   playerOnePaper.style.width = "25em";
   playerOnePaper.classList.add("paper-fight-animation");
-  playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`
+  playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`;
   // toPlayerTwoScreen();
 });
 
@@ -98,8 +98,8 @@ playerOneScissors.addEventListener("click", function () {
   playerOnePaper.style.display = "none";
   playerOneRock.style.display = "none";
   playerOneScissors.style.width = "25em";
-  playerOneScissors.classList.add('scissors-fight-animation');
-  playerOneResultContainer.innerHTML = `<img src="./img/Ciseaux.png">`
+  playerOneScissors.classList.add("scissors-fight-animation");
+  playerOneResultContainer.innerHTML = `<img src="./img/Ciseaux.png">`;
   // toPlayerTwoScreen();
 });
 
@@ -114,8 +114,7 @@ playerTwoRock.addEventListener("click", function () {
   playerTwoScissors.style.display = "none";
   playerTwoRock.style.width = "25em";
   playerTwoRock.classList.add("rock-fight-animation");
-  playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`
- 
+  playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`;
 
   // toFightScreen();
   result();
@@ -128,7 +127,7 @@ playerTwoPaper.addEventListener("click", function () {
   playerTwoScissors.style.display = "none";
   playerTwoPaper.style.width = "25em";
   playerTwoPaper.classList.add("paper-fight-animation");
-  playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`
+  playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`;
 
   // toFightScreen();
   result();
@@ -140,8 +139,8 @@ playerTwoScissors.addEventListener("click", function () {
   playerTwoRock.style.display = "none";
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.width = "25em";
-  playerTwoScissors.classList.add('scissors-fight-animation');
-  playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`
+  playerTwoScissors.classList.add("scissors-fight-animation");
+  playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`;
   // toFightScreen();
   result();
 });
@@ -150,12 +149,13 @@ playerTwoScissors.addEventListener("click", function () {
 
 function result() {
   if (
-    (choicePlayerOne === choicePlayerTwo) ||
-    (choicePlayerOne == "") ||
-    (choicePlayerTwo == "")
+    choicePlayerOne === choicePlayerTwo ||
+    choicePlayerOne == "" ||
+    choicePlayerTwo == ""
   ) {
     const egality = document.createElement("h2");
     egality.innerHTML = "None of you win !";
+    egality.classList.add("score-message")
     resultScreen.appendChild(egality);
   } else if (
     (choicePlayerOne === "rock" && choicePlayerTwo == "scissors") ||
@@ -164,10 +164,12 @@ function result() {
   ) {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 1 wins";
+    victory.classList.add("score-message")
     resultScreen.appendChild(victory);
   } else {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 2 wins";
+    victory.classList.add("score-message")
     resultScreen.appendChild(victory);
   }
 }
