@@ -13,7 +13,7 @@ const btnPlayerTwo = document.querySelector(".btn-j2");
 const gameScreen = document.querySelector(".game-modale");
 const resultScreen = document.querySelector(".result-modale");
 const btnToResult = document.querySelector(".btn-result");
-const btnToNextMatch = document.querySelector('.btn-next-match'); 
+const btnToNextMatch = document.querySelector(".btn-next-match");
 
 const resultimg = document.querySelector(".img-result");
 
@@ -75,9 +75,7 @@ function toResultScreen() {
   resultScreen.style.display = "flex";
 }
 
-// Command to next match 
-
-
+// Command to next match
 
 // Game algorythm player's one choice
 
@@ -93,9 +91,9 @@ playerOneRock.addEventListener("click", function () {
   // toPlayerTwoScreen();
 });
 
-playerOnePaper.addEventListener("click", pOneSetPaper)
+playerOnePaper.addEventListener("click", pOneSetPaper);
 
-function pOneSetPaper () {
+function pOneSetPaper() {
   choicePlayerOne = playerOnePaper.value;
   console.log(choicePlayerOne);
   playerOneScissors.style.display = "none";
@@ -104,7 +102,7 @@ function pOneSetPaper () {
   playerOnePaper.classList.add("paper-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`;
   // toPlayerTwoScreen();
-};
+}
 
 playerOneScissors.addEventListener("click", function () {
   choicePlayerOne = playerOneScissors.value;
@@ -141,7 +139,6 @@ playerTwoPaper.addEventListener("click", function () {
   playerTwoPaper.style.width = "25em";
   playerTwoPaper.classList.add("paper-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`;
-
   // toFightScreen();
   result();
   imgend();
@@ -181,21 +178,22 @@ function result() {
     victory.innerHTML = "Player 1 wins";
     victory.classList.add("score-message");
     resultScreen.insertBefore(victory, resultimg);
-    scorePlayerOne++
-    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`
-    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`
+    scorePlayerOne++;
+    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
+    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   } else {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 2 wins";
     victory.classList.add("score-message");
     resultScreen.insertBefore(victory, resultimg);
-    scorePlayerTwo++
-    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`
-    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`
+    scorePlayerTwo++;
+    scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
+    scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   }
 }
 
 // Code for img result asset
+
 function imgend() {
   if (
     (choicePlayerOne == "rock" && choicePlayerTwo == "paper") ||
@@ -216,84 +214,69 @@ function imgend() {
   }
 }
 
-btnToNextMatch.addEventListener('click', function () {
-  toNextMatchOne(); 
-  toNextMatchTwo(); 
-}); 
+btnToNextMatch.addEventListener("click", function () {
+  toNextMatchOne();
+  toNextMatchTwo();
+});
 
 function toNextMatchOne() {
-
   if (choicePlayerOne == "paper") {
-
-    choicePlayerOne = ""; 
-    playerOneScissors.style.display = "block";
-    playerOneRock.style.display = "block";
+    choicePlayerOne = "";
+    playerOneScissors.style.display = "flex";
+    playerOneRock.style.display = "flex";
     playerOnePaper.style.width = "";
     playerOnePaper.classList.remove("paper-fight-animation");
     playerOneResultContainer.innerHTML = "";
     welcomeScreen.style.display = "flex";
-    resultScreen.style.display = "none"
-
+    resultScreen.style.display = "none";
   } else if (choicePlayerOne == "rock") {
-
-  choicePlayerOne = ""; 
-  playerOnePaper.style.display = "block";
-  playerOneScissors.style.display = "block";
-  playerOneRock.style.width = "";
-  playerOneRock.classList.remove("rock-fight-animation");
-  playerOneResultContainer.innerHTML = '';
-  welcomeScreen.style.display = "flex";
-  resultScreen.style.display = "none"; 
-  }
-
-  else if (choicePlayerOne == "scissors") {
-
-    choicePlayerOne = ""; 
-    playerOnePaper.style.display = "block";
-    playerOneRock.style.display = "block";
+    choicePlayerOne = "";
+    playerOnePaper.style.display = "flex";
+    playerOneScissors.style.display = "flex";
+    playerOneRock.style.width = "";
+    playerOneRock.classList.remove("rock-fight-animation");
+    playerOneResultContainer.innerHTML = "";
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none";
+  } else if (choicePlayerOne == "scissors") {
+    choicePlayerOne = "";
+    playerOnePaper.style.display = "flex";
+    playerOneRock.style.display = "flex";
     playerOneScissors.style.width = "";
     playerOneScissors.classList.remove("scissors-fight-animation");
     playerOneResultContainer.innerHTML = "";
     welcomeScreen.style.display = "flex";
-    resultScreen.style.display = "none"; 
-    }
+    resultScreen.style.display = "none";
   }
+}
 
-  function toNextMatchTwo() {
-
-     if (choicePlayerTwo == "paper") {
-
-      choicePlayerTwo = ""; 
-      playerTwoScissors.style.display = "block";
-      playerTwoRock.style.display = "block";
-      playerTwoPaper.style.width = "";
-      playerTwoPaper.classList.remove("paper-fight-animation");
-      playerTwoResultContainer.innerHTML = "";
-      welcomeScreen.style.display = "flex";
-      resultScreen.style.display = "none"
-  
-    } else if (choicePlayerTwo == "rock") {
-  
-    choicePlayerTwo = ""; 
+function toNextMatchTwo() {
+  if (choicePlayerTwo == "paper") {
+    choicePlayerTwo = "";
+    playerTwoScissors.style.display = "block";
+    playerTwoRock.style.display = "block";
+    playerTwoPaper.style.width = "";
+    playerTwoPaper.classList.remove("paper-fight-animation");
+    playerTwoResultContainer.innerHTML = "";
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none";
+  } else if (choicePlayerTwo == "rock") {
+    choicePlayerTwo = "";
     playerTwoPaper.style.display = "block";
     playerTwoScissors.style.display = "block";
     playerTwoRock.style.width = "";
     playerTwoRock.classList.remove("rock-fight-animation");
-    playerTwoResultContainer.innerHTML = '';
+    playerTwoResultContainer.innerHTML = "";
     welcomeScreen.style.display = "flex";
-    resultScreen.style.display = "none"; 
-    }
-  
-    else if (choicePlayerTwo == "scissors") {
-  
-      choicePlayerTwo = ""; 
-      playerTwoPaper.style.display = "block";
-      playerTwoRock.style.display = "block";
-      playerTwoScissors.style.width = "";
-      playerTwoScissors.classList.remove("scissors-fight-animation");
-      playerTwoResultContainer.innerHTML = "";
-      welcomeScreen.style.display = "flex";
-      resultScreen.style.display = "none"; 
-      }
-
+    resultScreen.style.display = "none";
+  } else if (choicePlayerTwo == "scissors") {
+    choicePlayerTwo = "";
+    playerTwoPaper.style.display = "block";
+    playerTwoRock.style.display = "block";
+    playerTwoScissors.style.width = "";
+    playerTwoScissors.classList.remove("scissors-fight-animation");
+    playerTwoResultContainer.innerHTML = "";
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none";
+  }
 }
