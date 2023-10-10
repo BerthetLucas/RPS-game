@@ -17,21 +17,21 @@
 <body>
   <!--Welcome screen-->
 
-  <section class="welcome-modale h-screen flex flex-col justify-center items-center">
-    <h1 class="font-bold text-6xl mb-16">Welcome players !</h1>
-    <p class="text-2xl mb-16">This game needs two players, you'll have to choose an attack first</p>
+  <section class=" welcome-modale flex flex-col items-center justify-center h-screen">
+    <h1 class="font-bold text-6xl mb-16 text-center">Welcome players !</h1>
+    <p class="text-2xl mb-16 text-center">This game needs two players, you'll have to choose an attack first</p>
     <button class="btn-start-game text-lg">Start Game !</button>
   </section>
 
   <!--Player 1-->
 
   <section class="j1-modale h-screen flex-col items-center justify-center overflow-hidden">
-    <div class="mb-20">
-    <button class="j1-rock" value="rock"><img src="./img/Pierre.png"></button>
+    <div class="mb-5 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20">
+    <button class="j1-rock w-[50%] sm:max-w-[30%]" value="rock"><img src="./img/Pierre.png"></button>
 
-    <button class="j1-paper" value="paper"><img src="./img/Feuille.png"></button>
+    <button class="j1-paper w-[50%] sm:max-w-[30%]" value="paper"><img src="./img/Feuille.png"></button>
 
-    <button class="j1-scissors" value="scissors"><img src="./img/Ciseaux.png"></button>
+    <button class="j1-scissors w-[50%] sm:max-w-[30%]" value="scissors"><img src="./img/Ciseaux.png"></button>
   </div>
 <div>
     <button class="btn-j1">To the next player</button>
@@ -41,12 +41,12 @@
   <!--Player 2-->
 
   <section class="j2-modale h-screen flex-col items-center justify-center overflow-hidden">
-    <div class="mb-20">
-    <button class="j2-rock" value="rock"><img src="./img/Pierre.png"</button>
+    <div class="mb-5 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20"">
+    <button class="j2-rock w-[50%] sm:max-w-[30%]" value="rock"><img src="./img/Pierre.png"></button>
 
-    <button class="j2-paper" value="paper"><img src="./img/Feuille.png"></button>
+    <button class="j2-paper w-[50%] sm:max-w-[30%]" value="paper"><img src="./img/Feuille.png"></button>
 
-    <button class="j2-scissors" value="scissors"><img src="./img/Ciseaux.png"></button>
+    <button class="j2-scissors w-[50%] sm:max-w-[30%]" value="scissors"><img src="./img/Ciseaux.png"></button>
   </div>
   <div>
     <button class="btn-j2">Fight !</button>

@@ -85,7 +85,7 @@ playerOneRock.addEventListener("click", function () {
   console.log(choicePlayerOne);
   playerOnePaper.style.display = "none";
   playerOneScissors.style.display = "none";
-  playerOneRock.style.width = "25em";
+  playerOneRock.style.width = "20em";
   playerOneRock.classList.add("rock-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Pierre.png">`;
   // toPlayerTwoScreen();
@@ -98,7 +98,7 @@ function pOneSetPaper() {
   console.log(choicePlayerOne);
   playerOneScissors.style.display = "none";
   playerOneRock.style.display = "none";
-  playerOnePaper.style.width = "25em";
+  playerOnePaper.style.width = "20em";
   playerOnePaper.classList.add("paper-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Feuille.png">`;
   // toPlayerTwoScreen();
@@ -109,7 +109,7 @@ playerOneScissors.addEventListener("click", function () {
   console.log(choicePlayerOne);
   playerOnePaper.style.display = "none";
   playerOneRock.style.display = "none";
-  playerOneScissors.style.width = "25em";
+  playerOneScissors.style.width = "20em";
   playerOneScissors.classList.add("scissors-fight-animation");
   playerOneResultContainer.innerHTML = `<img src="./img/Ciseaux.png">`;
   // toPlayerTwoScreen();
@@ -122,7 +122,7 @@ playerTwoRock.addEventListener("click", function () {
   console.log(choicePlayerTwo);
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.display = "none";
-  playerTwoRock.style.width = "25em";
+  playerTwoRock.style.width = "20em";
   playerTwoRock.classList.add("rock-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/PierreInvers.png">`;
 
@@ -136,7 +136,7 @@ playerTwoPaper.addEventListener("click", function () {
   console.log(choicePlayerTwo);
   playerTwoRock.style.display = "none";
   playerTwoScissors.style.display = "none";
-  playerTwoPaper.style.width = "25em";
+  playerTwoPaper.style.width = "20em";
   playerTwoPaper.classList.add("paper-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/FeuilleInvers.png">`;
   // toFightScreen();
@@ -149,7 +149,7 @@ playerTwoScissors.addEventListener("click", function () {
   console.log(choicePlayerTwo);
   playerTwoRock.style.display = "none";
   playerTwoPaper.style.display = "none";
-  playerTwoScissors.style.width = "25em";
+  playerTwoScissors.style.width = "20em";
   playerTwoScissors.classList.add("scissors-fight-animation");
   playerTwoResultContainer.innerHTML = `<img src="./img/CiseauxInvers.png">`;
   // toFightScreen();
