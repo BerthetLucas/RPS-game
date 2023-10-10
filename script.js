@@ -77,18 +77,7 @@ function toResultScreen() {
 
 // Command to next match 
 
-btnToNextMatch.addEventListener('click', toNextMatch); 
 
-function toNextMatch() {
-  choicePlayerOne = "";
-  choicePlayerTwo = "";
-  resultScreen.style.display = "none";
-  welcomeScreen.style.display = "flex";
-  playerOnePaper.removeEventListener("click", pOneSetPaper); 
-
-  // Réinitialiser les éléments DOM des joueurs
-
-}
 
 // Game algorythm player's one choice
 
@@ -105,7 +94,6 @@ playerOneRock.addEventListener("click", function () {
 });
 
 playerOnePaper.addEventListener("click", pOneSetPaper)
-
 
 function pOneSetPaper () {
   choicePlayerOne = playerOnePaper.value;
@@ -226,4 +214,86 @@ function imgend() {
     resultimg.setAttribute("src", "./img/imgFight/FeuilleEnd.png");
   } else {
   }
+}
+
+btnToNextMatch.addEventListener('click', function () {
+  toNextMatchOne(); 
+  toNextMatchTwo(); 
+}); 
+
+function toNextMatchOne() {
+
+  if (choicePlayerOne == "paper") {
+
+    choicePlayerOne = ""; 
+    playerOneScissors.style.display = "block";
+    playerOneRock.style.display = "block";
+    playerOnePaper.style.width = "";
+    playerOnePaper.classList.remove("paper-fight-animation");
+    playerOneResultContainer.innerHTML = "";
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none"
+
+  } else if (choicePlayerOne == "rock") {
+
+  choicePlayerOne = ""; 
+  playerOnePaper.style.display = "block";
+  playerOneScissors.style.display = "block";
+  playerOneRock.style.width = "";
+  playerOneRock.classList.remove("rock-fight-animation");
+  playerOneResultContainer.innerHTML = '';
+  welcomeScreen.style.display = "flex";
+  resultScreen.style.display = "none"; 
+  }
+
+  else if (choicePlayerOne == "scissors") {
+
+    choicePlayerOne = ""; 
+    playerOnePaper.style.display = "block";
+    playerOneRock.style.display = "block";
+    playerOneScissors.style.width = "";
+    playerOneScissors.classList.remove("scissors-fight-animation");
+    playerOneResultContainer.innerHTML = "";
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none"; 
+    }
+  }
+
+  function toNextMatchTwo() {
+
+     if (choicePlayerTwo == "paper") {
+
+      choicePlayerTwo = ""; 
+      playerTwoScissors.style.display = "block";
+      playerTwoRock.style.display = "block";
+      playerTwoPaper.style.width = "";
+      playerTwoPaper.classList.remove("paper-fight-animation");
+      playerTwoResultContainer.innerHTML = "";
+      welcomeScreen.style.display = "flex";
+      resultScreen.style.display = "none"
+  
+    } else if (choicePlayerTwo == "rock") {
+  
+    choicePlayerTwo = ""; 
+    playerTwoPaper.style.display = "block";
+    playerTwoScissors.style.display = "block";
+    playerTwoRock.style.width = "";
+    playerTwoRock.classList.remove("rock-fight-animation");
+    playerTwoResultContainer.innerHTML = '';
+    welcomeScreen.style.display = "flex";
+    resultScreen.style.display = "none"; 
+    }
+  
+    else if (choicePlayerTwo == "scissors") {
+  
+      choicePlayerTwo = ""; 
+      playerTwoPaper.style.display = "block";
+      playerTwoRock.style.display = "block";
+      playerTwoScissors.style.width = "";
+      playerTwoScissors.classList.remove("scissors-fight-animation");
+      playerTwoResultContainer.innerHTML = "";
+      welcomeScreen.style.display = "flex";
+      resultScreen.style.display = "none"; 
+      }
+
 }
