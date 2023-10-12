@@ -3,6 +3,7 @@
 let choicePlayerOne = "";
 let choicePlayerTwo = "";
 
+
 const welcomeScreen = document.querySelector(".welcome-modale");
 const btnStartGame = document.querySelector(".btn-start-game");
 const playOne = document.querySelector(".j1-modale");
@@ -159,6 +160,13 @@ playerTwoScissors.addEventListener("click", function () {
 
 // Game code for result
 
+btnToNextMatch.addEventListener("click", function () {
+  resultScreen.removeChild(resultScreen.firstChild);
+  toNextMatchOne();
+  toNextMatchTwo();
+   
+});
+
 function result() {
   if (
     choicePlayerOne === choicePlayerTwo ||
@@ -170,9 +178,9 @@ function result() {
     egality.classList.add("score-message");
     resultScreen.insertBefore(egality, resultimg);
   } else if (
-    (choicePlayerOne === "rock" && choicePlayerTwo == "scissors") ||
-    (choicePlayerOne === "paper" && choicePlayerTwo == "rock") ||
-    (choicePlayerOne === "scissors" && choicePlayerTwo == "paper")
+    (choicePlayerOne === "rock" && choicePlayerTwo === "scissors") ||
+    (choicePlayerOne === "paper" && choicePlayerTwo === "rock") ||
+    (choicePlayerOne === "scissors" && choicePlayerTwo === "paper")
   ) {
     const victory = document.createElement("h2");
     victory.innerHTML = "Player 1 wins";
@@ -190,7 +198,15 @@ function result() {
     scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
     scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   }
+
 }
+
+btnToNextMatch.addEventListener("click", function () {
+  resultScreen.removeChild(resultScreen.firstChild);
+  toNextMatchOne();
+  toNextMatchTwo();
+});
+
 
 // Code for img result asset
 
@@ -214,11 +230,7 @@ function imgend() {
   }
 }
 
-btnToNextMatch.addEventListener("click", function () {
-  toNextMatchOne();
-  toNextMatchTwo();
-  resultScreen.removeChild(victory); 
-});
+
 
 function toNextMatchOne() {
   if (choicePlayerOne == "paper") {
