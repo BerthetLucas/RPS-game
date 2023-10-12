@@ -202,9 +202,9 @@ function result() {
 }
 
 btnToNextMatch.addEventListener("click", function () {
-  resultScreen.removeChild(resultScreen.firstChild);
   toNextMatchOne();
   toNextMatchTwo();
+  resultScreen.removeChild(resultScreen.firstChild);
 });
 
 
