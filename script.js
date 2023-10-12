@@ -3,12 +3,14 @@
 let choicePlayerOne = "";
 let choicePlayerTwo = "";
 
-let textResult = document.querySelector('.result-text'); 
+const textResult = document.querySelector(".result-text");
+const textCongratulation = document.querySelector('.congratulation-text'); 
 
 const welcomeScreen = document.querySelector(".welcome-modale");
 const btnStartGame = document.querySelector(".btn-start-game");
 const playOne = document.querySelector(".j1-modale");
 const playTwo = document.querySelector(".j2-modale");
+const congratulationScreen = document.querySelector('.congratulation'); 
 
 const btnPlayerOne = document.querySelector(".btn-j1");
 const btnPlayerTwo = document.querySelector(".btn-j2");
@@ -16,6 +18,7 @@ const gameScreen = document.querySelector(".game-modale");
 const resultScreen = document.querySelector(".result-modale");
 const btnToResult = document.querySelector(".btn-result");
 const btnToNextMatch = document.querySelector(".btn-next-match");
+const btnNewGame = document.querySelector('.btn-new-game'); 
 
 const resultimg = document.querySelector(".img-result");
 
@@ -63,9 +66,9 @@ function toFightScreen() {
   playTwo.style.display = "none";
   gameScreen.style.display = "flex";
   playerOneResultContainer.style.animation = "bounceInLeft";
-  playerOneResultContainer.style.animationDuration = "2s";
+  playerOneResultContainer.style.animationDuration = "1s";
   playerTwoResultContainer.style.animation = "bounceInRight";
-  playerTwoResultContainer.style.animationDuration = "2s";
+  playerTwoResultContainer.style.animationDuration = "1s";
 }
 
 // Game screen to result screen
@@ -83,8 +86,6 @@ function toResultScreen() {
 
 playerOneRock.addEventListener("click", function () {
   choicePlayerOne = playerOneRock.value;
-
-  console.log(choicePlayerOne);
   playerOnePaper.style.display = "none";
   playerOneScissors.style.display = "none";
   playerOneRock.style.width = "25em";
@@ -97,7 +98,6 @@ playerOnePaper.addEventListener("click", pOneSetPaper);
 
 function pOneSetPaper() {
   choicePlayerOne = playerOnePaper.value;
-  console.log(choicePlayerOne);
   playerOneScissors.style.display = "none";
   playerOneRock.style.display = "none";
   playerOnePaper.style.width = "25em";
@@ -108,7 +108,6 @@ function pOneSetPaper() {
 
 playerOneScissors.addEventListener("click", function () {
   choicePlayerOne = playerOneScissors.value;
-  console.log(choicePlayerOne);
   playerOnePaper.style.display = "none";
   playerOneRock.style.display = "none";
   playerOneScissors.style.width = "25em";
@@ -121,7 +120,6 @@ playerOneScissors.addEventListener("click", function () {
 
 playerTwoRock.addEventListener("click", function () {
   choicePlayerTwo = playerTwoRock.value;
-  console.log(choicePlayerTwo);
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.display = "none";
   playerTwoRock.style.width = "25em";
@@ -135,7 +133,6 @@ playerTwoRock.addEventListener("click", function () {
 
 playerTwoPaper.addEventListener("click", function () {
   choicePlayerTwo = playerTwoPaper.value;
-  console.log(choicePlayerTwo);
   playerTwoRock.style.display = "none";
   playerTwoScissors.style.display = "none";
   playerTwoPaper.style.width = "25em";
@@ -148,7 +145,6 @@ playerTwoPaper.addEventListener("click", function () {
 
 playerTwoScissors.addEventListener("click", function () {
   choicePlayerTwo = playerTwoScissors.value;
-  console.log(choicePlayerTwo);
   playerTwoRock.style.display = "none";
   playerTwoPaper.style.display = "none";
   playerTwoScissors.style.width = "25em";
@@ -167,50 +163,30 @@ function result() {
     choicePlayerOne == "" ||
     choicePlayerTwo == ""
   ) {
-    textResult.innerHTML = "None of you win !"; 
-    // const egality = document.createElement("h2");
-    // egality.innerHTML = "None of you win !";
-    // egality.classList.add("score-message");
-    // resultScreen.insertBefore(egality, resultimg);
+    textResult.innerHTML = "None of you win !";
   } else if (
     (choicePlayerOne === "rock" && choicePlayerTwo === "scissors") ||
     (choicePlayerOne === "paper" && choicePlayerTwo === "rock") ||
     (choicePlayerOne === "scissors" && choicePlayerTwo === "paper")
   ) {
-    textResult.innerHTML = "Player 1 wins"; 
-    // const victory = document.createElement("h2");
-    // victory.innerHTML = "Player 1 wins";
-    // victory.classList.add("score-message");
-    // resultScreen.insertBefore(victory, resultimg);
+    textResult.innerHTML = "Player 1 wins";
     scorePlayerOne++;
     scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
     scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   } else {
-    textResult.innerHTML = "Player 2 wins"; 
-    // const victory = document.createElement("h2");
-    // victory.innerHTML = "Player 2 wins";
-    // victory.classList.add("score-message");
-    // resultScreen.insertBefore(victory, resultimg);
+    textResult.innerHTML = "Player 2 wins";
     scorePlayerTwo++;
     scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
     scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   }
-
 }
-
-btnToNextMatch.addEventListener("click", function () {
-  toNextMatchOne();
-  toNextMatchTwo();
-  textResult.innerHTML = ""; 
-});
-
 
 // Code for img result asset
 
 function imgend() {
   if (
     (choicePlayerOne == "rock" && choicePlayerTwo == "paper") ||
-    (choicePlayerTwo == "rock" && choicePlayerOne == "paper")
+    (choicePlayerOne == "paper" && choicePlayerTwo == "rock")
   ) {
     resultimg.setAttribute("src", "./img/imgFight/PierreEnd2.png");
   } else if (
@@ -227,6 +203,29 @@ function imgend() {
   }
 }
 
+// Reset the game for the next match and logic if player wins 3 times. 
+
+btnToNextMatch.addEventListener("click", function () {
+
+  if (scorePlayerOne >= 3) {
+    congratulationScreen.style.display = "flex";
+    resultScreen.style.display = "none";
+    welcomeScreen.style.display = "none"; 
+    textCongratulation.innerHTML = "Congratulation Player 1 you win this game !"
+
+  } else if (scorePlayerTwo >= 3) {
+    textCongratulation.innerHTML = "Congratulation Player 2 you win this game !"
+    congratulationScreen.style.display = "flex";
+    resultScreen.style.display = "none";
+    welcomeScreen.style.display = "none"; 
+  }else {
+  toNextMatchOne();
+  toNextMatchTwo();
+  textResult.innerHTML = "";
+}
+});
+
+// reset game function 
 
 function toNextMatchOne() {
   if (choicePlayerOne == "paper") {
@@ -236,7 +235,7 @@ function toNextMatchOne() {
     playerOnePaper.style.width = "";
     playerOnePaper.classList.remove("paper-fight-animation");
     playerOneResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   } else if (choicePlayerOne == "rock") {
     choicePlayerOne = "";
@@ -245,7 +244,7 @@ function toNextMatchOne() {
     playerOneRock.style.width = "";
     playerOneRock.classList.remove("rock-fight-animation");
     playerOneResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   } else if (choicePlayerOne == "scissors") {
     choicePlayerOne = "";
@@ -254,7 +253,7 @@ function toNextMatchOne() {
     playerOneScissors.style.width = "";
     playerOneScissors.classList.remove("scissors-fight-animation");
     playerOneResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   }
 }
@@ -267,7 +266,7 @@ function toNextMatchTwo() {
     playerTwoPaper.style.width = "";
     playerTwoPaper.classList.remove("paper-fight-animation");
     playerTwoResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   } else if (choicePlayerTwo == "rock") {
     choicePlayerTwo = "";
@@ -276,7 +275,7 @@ function toNextMatchTwo() {
     playerTwoRock.style.width = "";
     playerTwoRock.classList.remove("rock-fight-animation");
     playerTwoResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   } else if (choicePlayerTwo == "scissors") {
     choicePlayerTwo = "";
@@ -285,7 +284,18 @@ function toNextMatchTwo() {
     playerTwoScissors.style.width = "";
     playerTwoScissors.classList.remove("scissors-fight-animation");
     playerTwoResultContainer.innerHTML = "";
-    welcomeScreen.style.display = "flex";
+    playOne.style.display = "flex";
     resultScreen.style.display = "none";
   }
 }
+
+
+btnNewGame.addEventListener('click', function () {
+  toNextMatchOne();
+  toNextMatchTwo();
+  textResult.innerHTML = "";
+  scorePlayerOne = 0;
+  scorePlayerTwo = 0;
+  congratulationScreen.style.display = "none"; 
+  welcomeScreen.style.display = "flex"; 
+})

@@ -30,6 +30,11 @@
   background-color: var(--blue);
 }
 
+
+.congratulation{
+  display: none;
+  background-color: var(--green);
+}
 /* Button style  */
 
 .btn-start-game {
@@ -44,11 +49,11 @@
 
 .btn-start-game:hover {
   animation: rubberBand;
-  animation-duration: 1s; 
-  --animate-repeat : 1; 
+  animation-duration: 1s;
+  --animate-repeat: 1;
 }
 
-.btn-j1{
+.btn-j1 {
   border: none;
   padding: 2em;
   border-radius: 15px;
@@ -60,11 +65,11 @@
 
 .btn-j1:hover {
   animation: rubberBand;
-  animation-duration: 1s; 
-  --animate-repeat : 1; 
+  animation-duration: 1s;
+  --animate-repeat: 1;
 }
 
-.btn-j2{
+.btn-j2 {
   border: none;
   padding: 2em;
   border-radius: 15px;
@@ -76,11 +81,11 @@
 
 .btn-j2:hover {
   animation: rubberBand;
-  animation-duration: 1s; 
-  --animate-repeat : 1; 
+  animation-duration: 1s;
+  --animate-repeat: 1;
 }
 
-.btn-result{
+.btn-result {
   border: none;
   padding: 2em;
   border-radius: 15px;
@@ -92,11 +97,11 @@
 
 .btn-result:hover {
   animation: rubberBand;
-  animation-duration: 1s; 
-  --animate-repeat : 1; 
+  animation-duration: 1s;
+  --animate-repeat: 1;
 }
 
-.btn-next-match{
+.btn-next-match {
   border: none;
   padding: 2em;
   border-radius: 15px;
@@ -106,6 +111,22 @@
   box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
 }
 
+.btn-new-game {
+  border: none;
+  padding: 2em;
+  border-radius: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: var(--yellow);
+  box-shadow: 6px 10px 8px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-new-game:hover {
+  animation: rubberBand;
+  animation-duration: 1s;
+  --animate-repeat: 1;
+}
+
 /* Assets for players choices */
 
 .j1-rock {
@@ -113,9 +134,9 @@
 }
 
 .j1-rock:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
-  --animate-repeat : 1; 
+  --animate-repeat: 1;
 }
 
 .j1-paper {
@@ -123,9 +144,9 @@
 }
 
 .j1-paper:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
-  --animate-repeat : 1; 
+  --animate-repeat: 1;
 }
 
 .j1-scissors {
@@ -133,7 +154,7 @@
 }
 
 .j1-scissors:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
 }
 
@@ -142,9 +163,9 @@
 }
 
 .j2-rock:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
-  --animate-repeat : 1; 
+  --animate-repeat: 1;
 }
 
 .j2-paper {
@@ -152,7 +173,7 @@
 }
 
 .j2-paper:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
 }
 
@@ -161,99 +182,117 @@
 }
 
 .j2-scissors:hover {
-  animation : shakeY; 
+  animation: shakeY;
   animation-duration: 2s;
-  --animate-repeat : 1; 
+  --animate-repeat: 1;
 }
-
 
 /* Containers for assets in the fight screen  */
 
-.j1-choice-container{
-  width : 10em; 
+.j1-choice-container {
+  width: 10em;
 }
 
-.j2-choice-container{
-  width : 10em; 
+.j2-choice-container {
+  width: 10em;
 }
 
 .explosion-img {
-  height : 8em; 
+  height: 8em;
   animation: pulse;
   animation-duration: 3s;
-
 }
 
 .rock-fight-animation {
-  animation : backOutRight; 
-  animation-duration : 3s; 
-  width : 15em; 
+  animation: backOutRight;
+  animation-duration: 3s;
+  width: 15em;
 }
 
 .paper-fight-animation {
-  animation : fadeOutUp; 
-  animation-duration : 3s; 
-  width : 15em; 
+  animation: fadeOutUp;
+  animation-duration: 3s;
+  width: 15em;
 }
 
 .scissors-fight-animation {
-  animation : rotateOutUpLeft; 
-  animation-duration : 3s; 
-  width : 15em; 
+  animation: rotateOutUpLeft;
+  animation-duration: 3s;
+  width: 15em;
 }
-
 
 /* Style for the result screen  */
 
-.score-message{
-  font-size : 3em; 
-  font-weight : bold; 
-  color : white
+.score-message {
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
 }
 
-.img-result{
-  margin-top : 3em; 
+.img-result {
+  margin-top: 3em;
   margin-bottom: 3em;
-  width: 60%; 
-  animation : fadeIn; 
+  width: 60%;
+  animation: fadeIn;
   animation-duration: 2s;
 }
 
-.player-one-score{
-  font-size : 2em; 
-  font-weight : bold; 
-  color : white; 
-  margin-bottom : 1em; 
-
+.player-one-score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1em;
+  background-color: var(--navy);
+  padding: 0.5em;
+  border-radius: 15px;
 }
 
-.player-two-score{
-  font-size : 2em; 
-  font-weight : bold; 
-  color : white;
-  margin-bottom : 1em; 
+.player-two-score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1em;
+  background-color: var(--navy);
+  padding: 0.5em;
+  border-radius: 15px;
+}
+
+.result-text {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.congratulation-text{
+  text-align: center;
+  color : black; 
+  font-size: 1.6em;
+  font-weight: bold;
+  background-color: var(--yellow);
+  padding: 1em; 
+  width : 80%; 
+  border-radius: 15px;
+ 
 }
 
 @media screen and (min-width: 546px) {
-  .img-result{
-    margin-top : 0em; 
+  .img-result {
+    margin-top: 0em;
     margin-bottom: 0em;
-    width: 30%; 
+    width: 30%;
   }
 
   .explosion-img {
-    height : 20em; 
+    height: 20em;
     animation: pulse;
     animation-duration: 3s;
-  
   }
 
-  .j1-choice-container{
-    width : 20em; 
-  }
-  
-  .j2-choice-container{
-    width : 20em; 
+  .j1-choice-container {
+    width: 20em;
   }
 
+  .j2-choice-container {
+    width: 20em;
+  }
 }

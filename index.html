@@ -7,10 +7,7 @@
   <script src="script.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>Rock Paper Scissors</title>
 </head>
 
@@ -19,7 +16,9 @@
 
   <section class=" welcome-modale flex flex-col items-center justify-center h-screen">
     <h1 class="font-bold text-6xl mb-16 text-center">Welcome players !</h1>
-    <p class="text-2xl mb-16 text-center">This game needs two players, you'll have to choose an attack first</p>
+    <p class="text-xl mb-16 text-center me-2 ms-2">This game needs two players, each of them have to select a moove
+      first and click on the main button to confirm the choice.
+    <br><br> <strong>3</strong> win and the victory is yours !</p>
     <button class="btn-start-game text-lg">Start Game !</button>
   </section>
 
@@ -27,14 +26,14 @@
 
   <section class="j1-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="mb-6 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20">
-    <button class="j1-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
+      <button class="j1-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
 
-    <button class="j1-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
+      <button class="j1-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
 
-    <button class="j1-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
-  </div>
-<div>
-    <button class="btn-j1">To the next player</button>
+      <button class="j1-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
+    </div>
+    <div>
+      <button class="btn-j1">To the next player</button>
     </div>
   </section>
 
@@ -42,28 +41,28 @@
 
   <section class="j2-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="mb-6 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20"">
-    <button class="j2-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
+    <button class=" j2-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
 
-    <button class="j2-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
+      <button class="j2-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
 
-    <button class="j2-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
-  </div>
-  <div>
-    <button class="btn-j2">Fight !</button>
-  </div>
+      <button class="j2-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
+    </div>
+    <div>
+      <button class="btn-j2">Fight !</button>
+    </div>
   </section>
 
   <!--Game screen-->
 
   <section class="game-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="flex flex-row items-center mb-20">
-    <div class="j1-choice-container"></div>
-    <div class="explosion"><img src="./img/explosion.png" class="explosion-img"></div>
-    <div class="j2-choice-container"></div>
-  </div>
+      <div class="j1-choice-container"></div>
+      <div class="explosion"><img src="./img/explosion.png" class="explosion-img"></div>
+      <div class="j2-choice-container"></div>
+    </div>
     <button class="btn-result">Go to result</button>
 
-    
+
   </section>
 
   <!--Result screen-->
@@ -72,14 +71,26 @@
 
     <h2 class="result-text"></h2>
     <img class="img-result">
-    <div class = "flex flex-row gap-5">
-    <p class="player-one-score"></p>
-    <p class="player-two-score"></p>
-  </div>
-
-<button class="btn-next-match mt-8">Next Match</button>
+    <div class="flex flex-row gap-5">
+      <p class="player-one-score"></p>
+      <p class="player-two-score"></p>
+    </div>
+    <button class="btn-next-match mt-8">Next Match</button>
 
   </section>
+
+
+  <!--Game ending-->
+
+  <section class="congratulation flex-col h-screen items-center justify-center">
+
+ <h2 class="congratulation-text"></h2>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <dotlottie-player src="https://lottie.host/3935ee45-c868-463d-90f7-a5a71c72dafb/CW2Iw9WRvt.json"
+      background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+      <button class="btn-new-game">Another Game !</button>
+  </section>
+
 </body>
 
 </html>
