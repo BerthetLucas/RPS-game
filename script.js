@@ -3,6 +3,7 @@
 let choicePlayerOne = "";
 let choicePlayerTwo = "";
 
+let textResult = document.querySelector('.result-text'); 
 
 const welcomeScreen = document.querySelector(".welcome-modale");
 const btnStartGame = document.querySelector(".btn-start-game");
@@ -160,40 +161,36 @@ playerTwoScissors.addEventListener("click", function () {
 
 // Game code for result
 
-btnToNextMatch.addEventListener("click", function () {
-  resultScreen.removeChild(resultScreen.firstChild);
-  toNextMatchOne();
-  toNextMatchTwo();
-   
-});
-
 function result() {
   if (
     choicePlayerOne === choicePlayerTwo ||
     choicePlayerOne == "" ||
     choicePlayerTwo == ""
   ) {
-    const egality = document.createElement("h2");
-    egality.innerHTML = "None of you win !";
-    egality.classList.add("score-message");
-    resultScreen.insertBefore(egality, resultimg);
+    textResult.innerHTML = "None of you win !"; 
+    // const egality = document.createElement("h2");
+    // egality.innerHTML = "None of you win !";
+    // egality.classList.add("score-message");
+    // resultScreen.insertBefore(egality, resultimg);
   } else if (
     (choicePlayerOne === "rock" && choicePlayerTwo === "scissors") ||
     (choicePlayerOne === "paper" && choicePlayerTwo === "rock") ||
     (choicePlayerOne === "scissors" && choicePlayerTwo === "paper")
   ) {
-    const victory = document.createElement("h2");
-    victory.innerHTML = "Player 1 wins";
-    victory.classList.add("score-message");
-    resultScreen.insertBefore(victory, resultimg);
+    textResult.innerHTML = "Player 1 wins"; 
+    // const victory = document.createElement("h2");
+    // victory.innerHTML = "Player 1 wins";
+    // victory.classList.add("score-message");
+    // resultScreen.insertBefore(victory, resultimg);
     scorePlayerOne++;
     scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
     scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
   } else {
-    const victory = document.createElement("h2");
-    victory.innerHTML = "Player 2 wins";
-    victory.classList.add("score-message");
-    resultScreen.insertBefore(victory, resultimg);
+    textResult.innerHTML = "Player 2 wins"; 
+    // const victory = document.createElement("h2");
+    // victory.innerHTML = "Player 2 wins";
+    // victory.classList.add("score-message");
+    // resultScreen.insertBefore(victory, resultimg);
     scorePlayerTwo++;
     scorePlayerOneText.innerHTML = `Player 1 : ${scorePlayerOne}`;
     scorePlayerTwoText.innerHTML = `Player 2 : ${scorePlayerTwo}`;
@@ -204,7 +201,7 @@ function result() {
 btnToNextMatch.addEventListener("click", function () {
   toNextMatchOne();
   toNextMatchTwo();
-  resultScreen.removeChild(resultScreen.firstChild);
+  textResult.innerHTML = ""; 
 });
 
 
@@ -229,7 +226,6 @@ function imgend() {
   } else {
   }
 }
-
 
 
 function toNextMatchOne() {
