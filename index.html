@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+  name="description"
+  content="Rock Paper Scissors game"
+/>
+<meta property="og:image" content="./img/VignetteRPS"/>
+<meta property="og:image:alt" content="pictures of rock paper scissors game" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
   <script src="script.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
@@ -26,11 +35,11 @@
 
   <section class="j1-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="mb-6 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20">
-      <button class="j1-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
+      <button class="j1-rock w-[50%] " value="rock"><img src="./img/Pierre.png" alt="rock hand sign"></button>
 
-      <button class="j1-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
+      <button class="j1-paper w-[50%] " value="paper"><img src="./img/Feuille.png" alt="paper hand sign"></button>
 
-      <button class="j1-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
+      <button class="j1-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png" alt="scissors hand sign"></button>
     </div>
     <div>
       <button class="btn-j1">To the next player</button>
@@ -41,11 +50,11 @@
 
   <section class="j2-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="mb-6 flex items-center justify-center flex-col gap-2 sm:flex-row md:mb-20"">
-    <button class=" j2-rock w-[50%] " value="rock"><img src="./img/Pierre.png"></button>
+    <button class=" j2-rock w-[50%] " value="rock"><img src="./img/Pierre.png" alt="rock hand sign"></button>
 
-      <button class="j2-paper w-[50%] " value="paper"><img src="./img/Feuille.png"></button>
+      <button class="j2-paper w-[50%] " value="paper"><img src="./img/Feuille.png" alt="paper hand sign"></button>
 
-      <button class="j2-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png"></button>
+      <button class="j2-scissors w-[50%] " value="scissors"><img src="./img/Ciseaux.png" alt="scissors hand sign"></button>
     </div>
     <div>
       <button class="btn-j2">Fight !</button>
@@ -57,7 +66,7 @@
   <section class="game-modale h-screen flex-col items-center justify-center overflow-hidden">
     <div class="flex flex-row items-center mb-20">
       <div class="j1-choice-container"></div>
-      <div class="explosion"><img src="./img/explosion.png" class="explosion-img"></div>
+      <div class="explosion"><img src="./img/explosion.png" class="explosion-img" alt="explosion drawing"></div>
       <div class="j2-choice-container"></div>
     </div>
     <button class="btn-result">Go to result</button>
@@ -70,7 +79,7 @@
   <section class="result-modale flex-col h-screen items-center justify-center">
 
     <h2 class="result-text"></h2>
-    <img class="img-result">
+    <img class="img-result" alt="picture showing the game result">
     <div class="flex flex-row gap-5">
       <p class="player-one-score"></p>
       <p class="player-two-score"></p>
