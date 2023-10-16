@@ -189,17 +189,22 @@ function imgend() {
     (choicePlayerOne == "paper" && choicePlayerTwo == "rock")
   ) {
     resultimg.setAttribute("src", "./img/imgFight/PierreEnd2.png");
+    resultimg.setAttribute("alt", "Rock Wrapp by paper");
   } else if (
     (choicePlayerOne == "rock" && choicePlayerTwo == "scissors") ||
     (choicePlayerTwo == "rock" && choicePlayerOne == "scissors")
   ) {
     resultimg.setAttribute("src", "./img/imgFight/CiseauxEnd.png");
+    resultimg.setAttribute("alt", "Scissors smash by a rock");
   } else if (
     (choicePlayerOne == "paper" && choicePlayerTwo == "scissors") ||
     (choicePlayerTwo == "paper" && choicePlayerOne == "scissors")
   ) {
     resultimg.setAttribute("src", "./img/imgFight/FeuilleEnd.png");
+    resultimg.setAttribute("alt", "Paper cut in two pieces");
   } else {
+    resultimg.setAttribute("src", "./img/loi.png")
+    resultimg.setAttribute("alt", " ");
   }
 }
 
